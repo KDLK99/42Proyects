@@ -1,40 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdlk99 <kdlk99@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/09 17:51:33 by kdlk99            #+#    #+#             */
-/*   Updated: 2023/03/09 18:12:37 by kdlk99           ###   ########.fr       */
+/*   Created: 2023/03/09 19:23:12 by kdlk99            #+#    #+#             */
+/*   Updated: 2023/03/09 19:50:39 by kdlk99           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*#include <stdio.h>
-#include <string.h>
+#include <stdlib.h>
+#include "libft.h"
 
-int	ft_memcmp(char *s1, char *s2, int n);
-
-int	main()
+void	*ft_calloc(int nitems, int size)
 {
-	char	s1[] = "Hola Mndo";
-	char	s2[] = "Hola Mundo";
+	void	*arr;
 
-	printf("%d\n", ft_memcmp(s1, s2, 3));
-	printf("%d", memcmp(s1, s2, 3));
-	return (0);
-}*/
-
-int	ft_memcmp(char *s1, char *s2, int n)
-{
-	int	i;
-
-	i = 0;
-	while (i < n)
-	{
-		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
-		i++;
-	}
-	return (0);
+	arr = malloc(nitems * size);
+	if (arr == NULL)
+		return (0);
+	ft_bzero(arr, nitems * size);
+	return (arr);
 }

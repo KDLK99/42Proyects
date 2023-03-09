@@ -1,40 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdlk99 <kdlk99@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/09 17:51:33 by kdlk99            #+#    #+#             */
-/*   Updated: 2023/03/09 18:12:37 by kdlk99           ###   ########.fr       */
+/*   Created: 2023/03/09 17:51:26 by kdlk99            #+#    #+#             */
+/*   Updated: 2023/03/09 18:09:08 by kdlk99           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*#include <stdio.h>
-#include <string.h>
+#include <stdlib.h>
 
-int	ft_memcmp(char *s1, char *s2, int n);
+int	ft_atoi(char *str);
 
 int	main()
 {
-	char	s1[] = "Hola Mndo";
-	char	s2[] = "Hola Mundo";
+	char num[] = "-2147483649";
 
-	printf("%d\n", ft_memcmp(s1, s2, 3));
-	printf("%d", memcmp(s1, s2, 3));
+	printf("%d\n", ft_atoi(num));
+	printf("%d\n", atoi(num));
 	return (0);
 }*/
 
-int	ft_memcmp(char *s1, char *s2, int n)
+#include "libft.h"
+
+int	ft_atoi(char *str)
 {
+	int	res;
+	int	sign;
 	int	i;
 
+	res = 0;
+	sign = 1;
 	i = 0;
-	while (i < n)
+	while (str[i] != '-' && !(str[i] >= '0' && str[i] <= '9'))
+		i++;
+	if (str[i] == '-')
 	{
-		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
+		sign = -1;
 		i++;
 	}
-	return (0);
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		res = res * 10 + (str[i] - '0');
+		i++;
+	}
+	return (sign * res);
 }
