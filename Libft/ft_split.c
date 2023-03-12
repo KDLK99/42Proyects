@@ -3,33 +3,35 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kdlk99 <kdlk99@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ivagarci <ivagarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/10 18:41:25 by kdlk99            #+#    #+#             */
-/*   Updated: 2023/03/11 16:48:08 by kdlk99           ###   ########.fr       */
+/*   Created: 2023/03/12 12:19:17 by ivagarci          #+#    #+#             */
+/*   Updated: 2023/03/12 12:38:49 by ivagarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+/*#include <stdio.h>
 #include "libft.h"
 
 char	**ft_split(char const *s, char c);
 size_t	ft_words(char const *s, char c);
-
+int	ft_letters(char const *s, int c);
 
 int	main()
 {
 	char	str[] = "Hola  Mundo afsd ";
-	char	m[][] = ft_split(str, ' ');
-	
-	for(int i = 0; i < 7; i++)
+	char	**m;
+
+	m = ft_split(str, ' ');
+	for(int i = 0; i < 5; i++)
 	{
-		printf("%s", m[i]);
+		printf("%s ", m[i]);
 	}
 	return (0);
-}
+}*/
 
 #include <stdlib.h>
+#include "libft.h"
 
 size_t	ft_words(char const *s, char c)
 {
@@ -52,31 +54,40 @@ size_t	ft_words(char const *s, char c)
 	return (words);
 }
 
+int	ft_letters(char const *s, int c)
+{
+	size_t	len;
+
+	len = 0;
+	while (*s != c && *s != '\0')
+	{
+		s++;
+		len++;
+	}
+	return (len);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**m;
-	size_t	i;
-	size_t	len;
 	size_t	j;
-	
-	len = 0;
-	i = 0;
+	size_t	len;
+
 	j = 0;
 	m = malloc((ft_words(s, c) + 1) * sizeof(char *));
 	if (m == 0)
 		return (0);
-	while (s[i] != '\0')
+	while (*s != '\0')
 	{
-		if (s[i] != c)
+		if (*s != c)
 		{
-			while (s[i] != c && s[i] != '\0')
-			{
-				i++;
-				len++;
-			}
-			m[j++] = ft_substr(s[i - len], 0, len);
+			len = ft_letters(s, c);
+			s = s + len;
+			m[j++] = ft_substr(s - len, 0, len);
 		}
 		else
-			i++;
+			s++;
 	}
+	m[j] = 0;
+	return (m);
 }

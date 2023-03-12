@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kdlk99 <kdlk99@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ivagarci <ivagarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/09 17:52:00 by kdlk99            #+#    #+#             */
-/*   Updated: 2023/03/09 18:12:52 by kdlk99           ###   ########.fr       */
+/*   Created: 2023/03/12 11:57:19 by ivagarci          #+#    #+#             */
+/*   Updated: 2023/03/12 17:50:04 by ivagarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	main()
 	return (0);
 }*/
 
-int	ft_strncmp(char *s1, char *s2, int n)
+int	strncmp(const char *s, const char *t, size_t num)
 {
 	int	i;
 

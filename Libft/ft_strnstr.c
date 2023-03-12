@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kdlk99 <kdlk99@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ivagarci <ivagarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/09 17:52:03 by kdlk99            #+#    #+#             */
-/*   Updated: 2023/03/09 18:12:58 by kdlk99           ###   ########.fr       */
+/*   Created: 2023/03/12 11:57:25 by ivagarci          #+#    #+#             */
+/*   Updated: 2023/03/12 15:30:45 by ivagarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,20 @@ int	main()
 	return (0);
 }*/
 
+int	ft_strcmp(char *s1, char *s2)
+{
+	int	i;
+
+	i = 0;
+	while (s1[i] != '\0' && s2[i] != '\0')
+	{
+		if (s1[i] != s2[i])
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
 char	*ft_strnstr(char *big, char *small, int n)
 {
 	int	i;
@@ -39,19 +53,5 @@ char	*ft_strnstr(char *big, char *small, int n)
 		}
 		i++;
 	}
-	return (NULL);
-}
-
-int	ft_strcmp(char *s1, char *s2)
-{
-	int	i;
-
-	i = 0;
-	while (s1[i] != '\0' && s2[i] != '\0')
-	{
-		if (s1[i] != s2[i])
-			return (0);
-		i++;
-	}
-	return (1);
+	return (0);
 }

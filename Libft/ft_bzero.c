@@ -1,42 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ivagarci <ivagarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/12 11:57:11 by ivagarci          #+#    #+#             */
-/*   Updated: 2023/03/12 11:57:12 by ivagarci         ###   ########.fr       */
+/*   Created: 2023/03/07 20:24:39 by ivagarci          #+#    #+#             */
+/*   Updated: 2023/03/12 16:33:04 by ivagarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*#include <stdio.h>
 #include <string.h>
 
-void ft_strlcpy(char *dest, char *src, int n);
+void	ft_bzero(char *s, int n);
 
 int main()
 {
-	char dest1[42];
-	char dest2[42];
-	char src[] = "";
+	char	s1[] = "Hola Mundosdfsdf";
+	char	s2[] = "Hola Mundosdfsdf";
 
-	ft_memmove(dest1, src, 0);
-	memmove(dest2, src, 0);
-	printf("%s\n", dest1);
-	printf("%s\n", dest2);
+	ft_bzero(s1, 4);
+	bzero(s2, 4);
+	printf("%s\n", &s1[3]);
+	printf("%s", &s2[3]);
 	return (0);
 }*/
 
-int	ft_strlcpy(char *dest, char const *src, int n)
+void	ft_bzero(void *s, size_t n)
 {
 	int	i;
 
 	i = 0;
-	while (src[i] != '\0' && i < n)
+	while (s[i] != '\0' && i < n)
 	{
-		dest[i] = src[i];
+		s[i] = 0;
 		i++;
 	}
-	return (i);
 }

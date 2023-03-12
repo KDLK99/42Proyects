@@ -1,42 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ivagarci <ivagarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/12 11:57:11 by ivagarci          #+#    #+#             */
-/*   Updated: 2023/03/12 11:57:12 by ivagarci         ###   ########.fr       */
+/*   Created: 2023/03/07 19:35:04 by ivagarci          #+#    #+#             */
+/*   Updated: 2023/03/07 19:41:16 by ivagarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*#include <stdio.h>
-#include <string.h>
+#include <ctype.h>
 
-void ft_strlcpy(char *dest, char *src, int n);
+int	ft_isascii(int c);
 
 int main()
 {
-	char dest1[42];
-	char dest2[42];
-	char src[] = "";
-
-	ft_memmove(dest1, src, 0);
-	memmove(dest2, src, 0);
-	printf("%s\n", dest1);
-	printf("%s\n", dest2);
+	printf("%d", ft_isascii(12));
+	printf("%d", isascii(12));
 	return (0);
 }*/
 
-int	ft_strlcpy(char *dest, char const *src, int n)
+int	ft_isascii(int c)
 {
-	int	i;
-
-	i = 0;
-	while (src[i] != '\0' && i < n)
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	return (i);
+	if (c <= 127 && c >= 0)
+		return (1);
+	return (0);
 }

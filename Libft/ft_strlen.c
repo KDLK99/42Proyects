@@ -1,41 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ivagarci <ivagarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/12 11:57:11 by ivagarci          #+#    #+#             */
-/*   Updated: 2023/03/12 11:57:12 by ivagarci         ###   ########.fr       */
+/*   Created: 2023/03/07 19:44:43 by ivagarci          #+#    #+#             */
+/*   Updated: 2023/03/12 15:28:05 by ivagarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*#include <stdio.h>
 #include <string.h>
 
-void ft_strlcpy(char *dest, char *src, int n);
+unsigned long	ft_strlen(char *s);
 
 int main()
 {
-	char dest1[42];
-	char dest2[42];
-	char src[] = "";
+	char	s[] = "   Hola Mundosdfsdf    ";
 
-	ft_memmove(dest1, src, 0);
-	memmove(dest2, src, 0);
-	printf("%s\n", dest1);
-	printf("%s\n", dest2);
+	printf("%lu", ft_strlen(s));
+	printf("%lu", strlen(s));
 	return (0);
 }*/
 
-int	ft_strlcpy(char *dest, char const *src, int n)
+unsigned long	ft_strlen(char const *s)
 {
 	int	i;
 
 	i = 0;
-	while (src[i] != '\0' && i < n)
+	while (s[i] != '\0')
 	{
-		dest[i] = src[i];
 		i++;
 	}
 	return (i);

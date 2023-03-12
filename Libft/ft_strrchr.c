@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kdlk99 <kdlk99@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ivagarci <ivagarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/09 17:52:05 by kdlk99            #+#    #+#             */
-/*   Updated: 2023/03/09 18:13:00 by kdlk99           ###   ########.fr       */
+/*   Created: 2023/03/12 11:57:32 by ivagarci          #+#    #+#             */
+/*   Updated: 2023/03/12 16:30:10 by ivagarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@ int	main()
 	return (0);
 }*/
 
-char	*ft_strrchr(char *s, int c)
+char	*ft_strrchr(char const *s, int c)
 {
 	int		i;
 	char	*last;
 
-	last = NULL;
+	last = 0;
 	i = 0;
 	while (s[i] != '\0')
 	{

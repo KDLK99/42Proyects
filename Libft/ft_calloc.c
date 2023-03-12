@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kdlk99 <kdlk99@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ivagarci <ivagarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/09 19:23:12 by kdlk99            #+#    #+#             */
-/*   Updated: 2023/03/09 19:50:39 by kdlk99           ###   ########.fr       */
+/*   Created: 2023/03/12 11:55:19 by ivagarci          #+#    #+#             */
+/*   Updated: 2023/03/12 16:32:06 by ivagarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-void	*ft_calloc(int nitems, int size)
+void	*ft_alloc(size_t nitems, size_t size)
 {
 	void	*arr;
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kdlk99 <kdlk99@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ivagarci <ivagarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/09 17:51:49 by kdlk99            #+#    #+#             */
-/*   Updated: 2023/03/09 18:12:42 by kdlk99           ###   ########.fr       */
+/*   Created: 2023/03/12 11:56:37 by ivagarci          #+#    #+#             */
+/*   Updated: 2023/03/12 16:27:26 by ivagarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	main()
 	return (0);
 }*/
 
-char	*ft_strchr(char *s, int c)
+char	*ft_strchr(char const *s, int c)
 {
 	int	i;
 
@@ -35,5 +35,5 @@ char	*ft_strchr(char *s, int c)
 			return (&s[i]);
 		i++;
 	}
-	return (NULL);
+	return (0);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kdlk99 <kdlk99@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ivagarci <ivagarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/09 17:51:31 by kdlk99            #+#    #+#             */
-/*   Updated: 2023/03/09 18:12:27 by kdlk99           ###   ########.fr       */
+/*   Created: 2023/03/12 11:55:37 by ivagarci          #+#    #+#             */
+/*   Updated: 2023/03/12 11:55:49 by ivagarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,5 @@ char	*ft_memchr(char *s, int c, int n)
 			return (&s[i]);
 		i++;
 	}
-	return (NULL);
+	return (0);
 }

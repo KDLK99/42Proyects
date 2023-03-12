@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kdlk99 <kdlk99@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ivagarci <ivagarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/09 17:51:52 by kdlk99            #+#    #+#             */
-/*   Updated: 2023/03/09 18:12:46 by kdlk99           ###   ########.fr       */
+/*   Created: 2023/03/12 11:57:04 by ivagarci          #+#    #+#             */
+/*   Updated: 2023/03/12 17:49:46 by ivagarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int main()
 	return (0);
 }*/
 
-int	ft_strlcat(char *dest, char *src, int n)
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
 	int	i;
 	int	j;

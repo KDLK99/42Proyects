@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kdlk99 <kdlk99@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ivagarci <ivagarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/09 19:56:14 by kdlk99            #+#    #+#             */
-/*   Updated: 2023/03/10 18:21:41 by kdlk99           ###   ########.fr       */
+/*   Created: 2023/03/12 11:57:54 by ivagarci          #+#    #+#             */
+/*   Updated: 2023/03/12 15:29:22 by ivagarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,9 @@ int main()
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*cpy;
-	int		size;
+	size_t	size;
 
+	size = 0;
 	while (s[size] != '\0')
 		size++;
 	size++;

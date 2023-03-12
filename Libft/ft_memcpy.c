@@ -1,42 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ivagarci <ivagarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/12 11:57:11 by ivagarci          #+#    #+#             */
-/*   Updated: 2023/03/12 11:57:12 by ivagarci         ###   ########.fr       */
+/*   Created: 2023/03/07 20:30:51 by ivagarci          #+#    #+#             */
+/*   Updated: 2023/03/12 16:35:28 by ivagarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*#include <stdio.h>
 #include <string.h>
 
-void ft_strlcpy(char *dest, char *src, int n);
+void	ft_memcpy(char *dest, char *src, int n);
 
 int main()
 {
-	char dest1[42];
-	char dest2[42];
-	char src[] = "";
+	char	s[] = "Hola Mundosdfsdf";
+	char	dest1[20];
+	char	dest2[20];
 
-	ft_memmove(dest1, src, 0);
-	memmove(dest2, src, 0);
+	ft_memcpy(dest1, s, 4);
+	memcpy(dest2, s, 4);
 	printf("%s\n", dest1);
-	printf("%s\n", dest2);
+	printf("%s", dest2);
 	return (0);
 }*/
 
-int	ft_strlcpy(char *dest, char const *src, int n)
+void	ft_memcpy(void *dest, void *src, size_t n)
 {
 	int	i;
 
 	i = 0;
-	while (src[i] != '\0' && i < n)
+	while (dest[i] != '\0' && i < n)
 	{
 		dest[i] = src[i];
 		i++;
 	}
-	return (i);
 }
