@@ -6,7 +6,7 @@
 /*   By: ivagarci <ivagarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 11:58:05 by ivagarci          #+#    #+#             */
-/*   Updated: 2023/03/12 11:58:06 by ivagarci         ###   ########.fr       */
+/*   Updated: 2023/03/16 17:09:33 by ivagarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,13 @@ int	ft_toupper(int c);
 
 int	main()
 {
-	printf("%c\n", ft_toupper('o'));
-	printf("%c", toupper('o'));
+	printf("%c\n", ft_toupper(1));
+	printf("%c", toupper(1));
 }*/
 
 int	ft_toupper(int c)
 {
-	return (c - 32);
+	if (c >= 'a' && c <= 'z')
+		return (c - 32);
+	return (c);
 }

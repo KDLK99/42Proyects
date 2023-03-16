@@ -6,37 +6,44 @@
 /*   By: ivagarci <ivagarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 11:57:11 by ivagarci          #+#    #+#             */
-/*   Updated: 2023/03/12 11:57:12 by ivagarci         ###   ########.fr       */
+/*   Updated: 2023/03/16 16:36:48 by ivagarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*#include <stdio.h>
 #include <string.h>
 
-void ft_strlcpy(char *dest, char *src, int n);
+size_t	ft_strlcpy(char *dest, char const *src, const size_t n);
 
 int main()
 {
 	char dest1[42];
 	char dest2[42];
-	char src[] = "";
+	char src[] = "lorem ipsum";
 
-	ft_memmove(dest1, src, 0);
-	memmove(dest2, src, 0);
+	ft_strlcpy(dest1, src, 3);
+	strlcpy(dest2, src, 3);
 	printf("%s\n", dest1);
 	printf("%s\n", dest2);
 	return (0);
 }*/
 
-int	ft_strlcpy(char *dest, char const *src, int n)
-{
-	int	i;
+#include "libft.h"
 
+size_t	ft_strlcpy(char *dest, char const *src, const size_t n)
+{
+	size_t	i;
+	size_t	len;
+
+	len = ft_strlen(src);
 	i = 0;
-	while (src[i] != '\0' && i < n)
+	if (n == 0)
+		return (len);
+	while ((i < len) && i < (n - 1))
 	{
 		dest[i] = src[i];
 		i++;
 	}
-	return (i);
+	dest[i] = '\0';
+	return (len);
 }

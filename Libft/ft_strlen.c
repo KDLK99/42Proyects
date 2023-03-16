@@ -6,7 +6,7 @@
 /*   By: ivagarci <ivagarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 19:44:43 by ivagarci          #+#    #+#             */
-/*   Updated: 2023/03/12 15:28:05 by ivagarci         ###   ########.fr       */
+/*   Updated: 2023/03/15 19:11:00 by ivagarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,11 @@ int main()
 	return (0);
 }*/
 
-unsigned long	ft_strlen(char const *s)
+#include "libft.h"
+
+size_t	ft_strlen(char const *s)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (s[i] != '\0')

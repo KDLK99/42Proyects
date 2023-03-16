@@ -6,14 +6,14 @@
 /*   By: ivagarci <ivagarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 20:24:39 by ivagarci          #+#    #+#             */
-/*   Updated: 2023/03/12 16:33:04 by ivagarci         ###   ########.fr       */
+/*   Updated: 2023/03/16 19:04:48 by ivagarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*#include <stdio.h>
 #include <string.h>
 
-void	ft_bzero(char *s, int n);
+void	ft_bzero(void *s, size_t n);
 
 int main()
 {
@@ -27,14 +27,18 @@ int main()
 	return (0);
 }*/
 
+#include "libft.h"
+
 void	ft_bzero(void *s, size_t n)
 {
-	int	i;
+	size_t	i;
+	char	*aux;
 
+	aux = (char *)s;
 	i = 0;
-	while (s[i] != '\0' && i < n)
+	while (i < n)
 	{
-		s[i] = 0;
+		aux[i] = '\0';
 		i++;
 	}
 }

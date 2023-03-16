@@ -6,14 +6,14 @@
 /*   By: ivagarci <ivagarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 20:30:51 by ivagarci          #+#    #+#             */
-/*   Updated: 2023/03/12 16:35:28 by ivagarci         ###   ########.fr       */
+/*   Updated: 2023/03/16 19:13:00 by ivagarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*#include <stdio.h>
 #include <string.h>
 
-void	ft_memcpy(char *dest, char *src, int n);
+void	*ft_memcpy(char *dest, char *src, int n);
 
 int main()
 {
@@ -28,14 +28,23 @@ int main()
 	return (0);
 }*/
 
-void	ft_memcpy(void *dest, void *src, size_t n)
-{
-	int	i;
+#include "libft.h"
 
+void	*ft_memcpy(void *dest, const void *src, size_t n)
+{
+	size_t	i;
+	char	*aux_dest;
+	char	*aux_src;
+
+	aux_dest = (char *) dest;
+	aux_src = (char *) src;
 	i = 0;
-	while (dest[i] != '\0' && i < n)
+	if (dest == NULL && src == NULL)
+		return (0);
+	while (i < n)
 	{
-		dest[i] = src[i];
+		aux_dest[i] = aux_src[i];
 		i++;
 	}
+	return (dest);
 }
