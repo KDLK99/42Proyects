@@ -6,7 +6,7 @@
 /*   By: ivagarci <ivagarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 11:58:12 by ivagarci          #+#    #+#             */
-/*   Updated: 2023/03/15 19:23:28 by ivagarci         ###   ########.fr       */
+/*   Updated: 2023/03/16 20:50:49 by ivagarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char			*ft_strchr(char const *s, int c);
 size_t			ft_strlcat(char *dst, const char *src, size_t size);
 size_t			ft_strlcpy(char *dest, char const *src, const size_t n);
 int				ft_strncmp(const char *s, const char *t, size_t num);
-char			*ft_strnstr(char *big, char *small, int n);
+char			*ft_strnstr(const char *big, const char *small, size_t n);
 char			*ft_strrchr(char const *s, int c);
 int				ft_tolower(int c);
 int				ft_toupper(int c);
