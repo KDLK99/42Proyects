@@ -3,22 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ivagarci <ivagarci@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kdlk99 <kdlk99@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 12:40:14 by ivagarci          #+#    #+#             */
-/*   Updated: 2023/03/12 14:10:02 by ivagarci         ###   ########.fr       */
+/*   Updated: 2023/03/19 20:48:30 by kdlk99           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+/*#include <stdio.h>
 
-char *ft_itoa(int n);
+char	*ft_itoa(int n);
 
 int	main()
 {
-	printf("%s", ft_itoa(-214));
+	printf("%s", ft_itoa(0));
 	return (0);
-}
+}*/
 
 #include "libft.h"
 #include <stdlib.h>
@@ -42,12 +42,27 @@ int	ft_numcifras(int n)
 		n = n * -1;
 		cont++;
 	}
+	else if (n == 0)
+		return (1);
 	while (n > 0)
 	{
 		n = n / 10;
 		cont++;
 	}
 	return (cont);
+}
+
+char	*ft_write_number(char *str, int i, int n)
+{
+	if (n == 0)
+		str[i] = '0';
+	while (n > 0)
+	{
+		str[i] = (n % 10) + '0';
+		n = n / 10;
+		i--;
+	}
+	return (str);
 }
 
 char	*ft_itoa(int n)
@@ -63,20 +78,15 @@ char	*ft_itoa(int n)
 	}
 	size = ft_numcifras(n);
 	str = malloc((size + 1) * sizeof(char));
+	if (str == 0)
+		return (0);
+	i = size - 1;
 	if (n < 0)
 	{
 		str[0] = '-';
 		n = n * -1;
 	}
-	if (str == 0)
-		return (0);
-	i = size - 1;
-	while (n >= 0)
-	{
-		str[i] = (n % 10) + '0';
-		n = n / 10;
-		i--;
-	}
+	ft_write_number(str, i, n);
 	str[size] = '\0';
 	return (str);
 }

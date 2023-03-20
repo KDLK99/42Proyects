@@ -1,44 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdlk99 <kdlk99@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/12 11:56:52 by ivagarci          #+#    #+#             */
-/*   Updated: 2023/03/19 21:42:47 by kdlk99           ###   ########.fr       */
+/*   Created: 2023/03/20 19:51:46 by kdlk99            #+#    #+#             */
+/*   Updated: 2023/03/20 19:57:03 by kdlk99           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*#include <stdio.h>
+/*#include <unistd.h>
+#include <fcntl.h>
 
-char	*ft_strdup(char *src);
+void	ft_putendl_fd(char *s, int fd);
 
-int main()
+int	main()
 {
-	char str[] = "Hola Mundo";
+	int	file;
 
-	printf("%s", ft_strdup(str));
+	file = open("hola.txt", O_WRONLY);
+	if (file == -1)
+	{
+		write(1, "Error", 5);
+		return (0);
+	}
+	ft_putendl_fd("Hola Mundo", file);
 	return (0);
 }*/
 
-#include <stdlib.h>
 #include "libft.h"
+#include <unistd.h>
 
-char	*ft_strdup(char const *src)
+void	ft_putendl_fd(char *s, int fd)
 {
-	char	*cpy;
-	int		size;
-
-	size = 0;
-	while (src[size] != '\0')
-	{
-		size++;
-	}
-	size++;
-	cpy = (char *) malloc(size * sizeof(char));
-	if (cpy == NULL)
-		return (0);
-	ft_strlcpy(cpy, src, size);
-	return (cpy);
+	ft_putstr_fd(s, fd);
+	if (s && fd)
+		write(fd, "\n", 1);
 }

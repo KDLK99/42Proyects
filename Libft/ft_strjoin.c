@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ivagarci <ivagarci@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kdlk99 <kdlk99@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 11:56:58 by ivagarci          #+#    #+#             */
-/*   Updated: 2023/03/12 15:32:02 by ivagarci         ###   ########.fr       */
+/*   Updated: 2023/03/19 20:02:27 by kdlk99           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,17 @@ int main()
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*aux;
+	size_t	s1_size;
+	size_t	s2_size;
 
-	if (ft_strlen(s1) == 0 || ft_strlen(s2) == 0)
-		return (0);
-	aux = malloc((ft_strlen(s1) + ft_strlen(s2)) * sizeof(char));
+	s1_size = ft_strlen(s1);
+	s2_size = ft_strlen(s2);
+	if (s1_size == 0 && s2_size == 0)
+		return (ft_strdup(""));
+	aux = malloc((s1_size + s2_size + 1) * sizeof(char));
 	if (aux == NULL)
 		return (0);
-	ft_strlcpy(aux, s1, ft_strlen(s1));
-	ft_strlcpy(&aux[ft_strlen(s1)], s2, ft_strlen(s2));
+	ft_strlcpy(aux, s1, s1_size + 1);
+	ft_strlcpy(&aux[s1_size], s2, s2_size + 1);
 	return (aux);
 }

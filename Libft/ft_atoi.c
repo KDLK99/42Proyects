@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ivagarci <ivagarci@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kdlk99 <kdlk99@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 11:54:57 by ivagarci          #+#    #+#             */
-/*   Updated: 2023/03/16 18:48:32 by ivagarci         ###   ########.fr       */
+/*   Updated: 2023/03/20 20:40:01 by kdlk99           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	main()
 
 #include "libft.h"
 
-int	ft_atoi(char *str)
+int	ft_atoi(char const *str)
 {
 	int	res;
 	int	sign;
