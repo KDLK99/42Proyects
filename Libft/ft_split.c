@@ -6,7 +6,7 @@
 /*   By: ivagarci <ivagarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 12:19:17 by ivagarci          #+#    #+#             */
-/*   Updated: 2023/03/25 11:54:15 by ivagarci         ###   ########.fr       */
+/*   Updated: 2023/03/25 16:32:05 by ivagarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,8 @@ char	**ft_split(char const *s, char c)
 	size_t	j;
 	size_t	len;
 
+	if (!s)
+		return (0);
 	j = 0;
 	m = malloc((ft_words(s, c) + 1) * sizeof(char *));
 	if (m == 0)

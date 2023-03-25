@@ -6,7 +6,7 @@
 /*   By: ivagarci <ivagarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 11:57:25 by ivagarci          #+#    #+#             */
-/*   Updated: 2023/03/16 20:53:12 by ivagarci         ###   ########.fr       */
+/*   Updated: 2023/03/25 16:23:47 by ivagarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ char	*ft_strnstr(const char *big, const char *small, size_t n)
 	size_t	i;
 
 	i = 0;
+	if (!big && n == 0)
+		return (0);
 	if (*small == '\0' || small == NULL)
 		return ((char *) big);
 	while (big[i] != '\0' && i < n)

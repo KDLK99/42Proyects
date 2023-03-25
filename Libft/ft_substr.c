@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kdlk99 <kdlk99@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ivagarci <ivagarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 11:57:54 by ivagarci          #+#    #+#             */
-/*   Updated: 2023/03/19 19:44:47 by kdlk99           ###   ########.fr       */
+/*   Updated: 2023/03/25 16:29:27 by ivagarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 
 int main()
 {
-	printf("%s", ft_substr("hola", 4294967295, 0));	
+	printf("%s", ft_substr(0, 1, 3));
 	return (0);
 }*/
 
@@ -30,6 +30,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	s_len;
 	size_t	cpy_len;
 
+	if (!s)
+		return (0);
 	s_len = ft_strlen(s);
 	while (s[0] == '\0')
 		return (ft_strdup(""));

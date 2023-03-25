@@ -6,7 +6,7 @@
 /*   By: ivagarci <ivagarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 17:32:03 by ivagarci          #+#    #+#             */
-/*   Updated: 2023/03/21 18:56:18 by ivagarci         ###   ########.fr       */
+/*   Updated: 2023/03/25 16:34:25 by ivagarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	(*del)(lst->content);
-	free(lst);
+	if (lst && del)
+	{	
+		(*del)(lst->content);
+		free(lst);
+	}
 }

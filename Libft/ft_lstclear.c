@@ -6,7 +6,7 @@
 /*   By: ivagarci <ivagarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 17:33:55 by ivagarci          #+#    #+#             */
-/*   Updated: 2023/03/21 18:53:14 by ivagarci         ###   ########.fr       */
+/*   Updated: 2023/03/25 16:35:44 by ivagarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,17 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	t_list	*act;
 	t_list	*ant;
 
-	act = *lst;
-	ant = 0;
-	while (act != 0)
-	{
-		ant = act;
-		act = act->next;
-		(*del)(ant->content);
-		free(ant);
+	if (lst && del)
+	{	
+		act = *lst;
+		ant = 0;
+		while (act != 0)
+		{
+			ant = act;
+			act = act->next;
+			(*del)(ant->content);
+			free(ant);
+		}
+		*lst = 0;
 	}
-	*lst = 0;
 }
