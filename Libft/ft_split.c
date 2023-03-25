@@ -6,7 +6,7 @@
 /*   By: ivagarci <ivagarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 12:19:17 by ivagarci          #+#    #+#             */
-/*   Updated: 2023/03/12 12:38:49 by ivagarci         ###   ########.fr       */
+/*   Updated: 2023/03/25 11:54:15 by ivagarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_letters(char const *s, int c);
 
 int	main()
 {
-	char	str[] = "Hola  Mundo afsd ";
+	char	str[] = "  Ho la      Mundo afsd    ";
 	char	**m;
 
 	m = ft_split(str, ' ');
