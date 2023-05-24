@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kdlk99 <kdlk99@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ivagarci <ivagarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 11:39:29 by kdlk99            #+#    #+#             */
-/*   Updated: 2023/04/04 12:31:17 by kdlk99           ###   ########.fr       */
+/*   Updated: 2023/05/24 19:45:40 by ivagarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,12 @@
 # define GET_NEXT_LINE_H
 
 char	*get_next_line(int fd);
+char	*ft_contiene_salto(char const *s);
+void	ft_separar(char *dest, char *src, int n);
+int	ft_longitud(char *s);
+
+#endif
+#ifndef BUFFER_SIZE
+# define BUFFER_SIZE  1
 
 #endif
